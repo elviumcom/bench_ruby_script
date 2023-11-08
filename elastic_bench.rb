@@ -42,7 +42,7 @@ search_queries.each do |search_query|
   retries = 0
   indexes_with_retries = []
 
-  measure_time("Running  10 000 #{search_query.first[0]} queries") do
+  measure_time("Running 10000 #{search_query.first[0]} queries") do
     10_000.times do |ind|
       client.search(index: index_name, body: { query: search_query })
     rescue StandardError

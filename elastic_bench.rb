@@ -1,3 +1,5 @@
+# elastic_bench.rb
+
 require_relative 'sample_data_and_mesure_time'
 require 'elasticsearch'
 require 'securerandom'
@@ -34,7 +36,7 @@ end
 
 search_queries = [
   { term:  { name: 'Oliver' } },
-  { match: { description: 'search_term_2' } },
+  { match: { description: 'companion for exact matching' } },
   { range: { age: { gte: 23, lte: 35 } } }
 ]
 
@@ -57,8 +59,7 @@ search_queries.each do |search_query|
     end
   end
 
-  puts "#{search_query.first[0]} Search retries: #{retries}" if retries > 0
-  puts "failed indexes: #{indexes_with_retries}" if indexes_with_retries.any?
+  puts "Search retries: #{retries}, failed indexes: #{indexes_with_retries}" if indexes_with_retries.any?
 end
 
 measure_time('Removing index') do

@@ -1,9 +1,11 @@
+# sample_data_and_mesure_time.rb
+
 def measure_time(text)
   start_time = Time.now
   yield
   end_time = Time.now
   execution_time = end_time - start_time
-  puts text + " took #{execution_time} seconds"
+  puts "#{execution_time} seconds - " + text
 end
 
 # 80 record * 250 = 20_000
@@ -21,7 +23,7 @@ SAMPLE_DATA = [
   { name: 'Isaac', description: "When it comes to precision in field value matching, Elasticsearch's term query is unmatched. This feature is tailor-made for exact term matching within fields, especially those with keyword values. Pinpoint accuracy is its forte.", age: 29 },
   { name: 'Jack', description: "Elasticsearch's term query is your key to exact field value matching. It's the ideal choice for seeking exact terms within fields, particularly those containing keywords. Expect spot-on results.", age: 33 },
   { name: 'Katie', description: "Achieve precision in field value matching with Elasticsearch's term query. It excels at exact term matching within fields, especially those with keyword values. You can rely on it for accurate results.", age: 27 },
-  { name: 'Liam', description: "In Elasticsearch, the term query is your trusted companion for exact matching of field values. It's particularly useful for searching within fields storing values as exact terms, such as keyword fields. Precision is its strength.", age: 38 },
+  { name: 'Liam', description: "In Elasticsearch, the term query is your trusted companion for exact mataching of field values. It's particularly useful for searching within fields storing values as exact terms, such as keyword fields. Precision is its strength.", age: 38 },
   { name: 'Mia', description: "The term query in Elasticsearch is your ticket to pinpoint accuracy in field value matching. It's designed for exact term matching within fields, making it perfect for keyword fields and scenarios requiring precision.", age: 41 },
   { name: 'Noah', description: "When it's precision you're after in field value matching, Elasticsearch's term query is the tool for the job. It specializes in exact term matching within fields, especially those with keyword values. Expect highly accurate results.", age: 23 },
   { name: 'Olivia', description: "Searching for exact matches within fields is a breeze with Elasticsearch's term query. It's your go-to choice for finding specific terms within fields, making it indispensable for keyword fields and cases requiring exact matches.", age: 37 },
@@ -62,7 +64,7 @@ SAMPLE_DATA = [
   { name: 'Bella', description: "Elasticsearch's term query is the answer for those seeking exact field value matching. It's the perfect choice for exact term matching within fields, especially those with keyword values. Expect spot-on results.", age: 26 },
   { name: 'Caleb', description: "When you're looking for precision in field value matching, Elasticsearch's term query is the go-to option. It's particularly useful for locating specific terms within fields, making it ideal for keyword fields and scenarios requiring precise matching.", age: 32 },
   { name: 'Daisy', description: "The term query in Elasticsearch is your ticket to precision in field value matching. It's designed for exact term matching within fields, making it perfect for keyword fields and scenarios requiring exact matches.", age: 37 },
-  { name: 'Elijah', description: "Elasticsearch's term query is your trusted companion for exact matching of field values. It's particularly useful for searching within fields storing values as exact terms, such as keyword fields. Precision is its strength.", age: 39 },
+  { name: 'Elijah', description: "Elasticsearch's term query is your trusted companion for exsact matching of field values. It's particularly useful for searching within fields storing values as exact terms, such as keyword fields. Precision is its strength.", age: 39 },
   { name: 'Fiona', description: "Precise field value matching is a breeze with Elasticsearch's term query. This feature is designed for exact term matching within fields, making it perfect for keyword fields and other use cases requiring exact matches.", age: 29 },
   { name: 'Gabriel', description: "When you need precision in field value matching, Elasticsearch's term query is your best friend. It specializes in exact term matching within fields, particularly those with keyword values. Expect highly accurate results.", age: 35 },
   { name: 'Hannah', description: "The term query is a powerful tool for exact matching of field values. It's commonly used when you need to find documents that contain specific terms within fields. This query is perfect for keyword fields and other cases where you need precise matching.", age: 28 },

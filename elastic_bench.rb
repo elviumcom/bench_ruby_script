@@ -4,13 +4,12 @@ require_relative 'sample_data_and_mesure_time'
 require 'elasticsearch'
 require 'securerandom'
 
-elasticsearch_address = 'http://localhost:9201'
-index_name = 'benchamrk_test_index'
-
 puts '...started ElasticSearch Benchmark...'
 
-client = Elasticsearch::Client.new(url: elasticsearch_address, log: false,
+client = Elasticsearch::Client.new(url: ELASTIC_URL, log: false,
                                    transport_options: { request: { timeout: 60 } })
+
+index_name = 'benchamrk_test_index'
 
 # Create a new index with settings and mappings
 client.indices.delete(index: index_name) if client.indices.exists?(index: index_name)

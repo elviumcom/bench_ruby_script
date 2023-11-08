@@ -2,8 +2,10 @@
 
 require_relative 'sample_data_and_mesure_time'
 require 'redis'
+require 'json'
 
-redis = Redis.new(host: 'localhost', port: 6379)
+redis = Redis.new(url: REDIS_URL)
+
 set_name = 'benchmark_test_set'
 
 puts '...started Redis Benchmark...'
@@ -36,6 +38,6 @@ search_queries.each_with_index do |query, index|
 end
 
 # Clear the Redis set
-measure_time('clearing cluster}') do
+measure_time('clearing cluster') do
   redis.del(set_name)
 end

@@ -3,20 +3,11 @@
 require_relative 'sample_data_and_mesure_time'
 require 'pg'
 
-db_config = {
-  host: 'localhost',
-  port: 5432,
-  user: 'your_username',
-  password: 'your_password',
-  dbname: 'your_database_name'
-}
+puts '...started PostgreSQL Benchmark...'
+
+conn = PG::Connection.new(POSTGRESL_URL)
 
 table_name = 'benchmark_test_table'
-
-# Establish a connection to PostgreSQL
-conn = PG.connect(db_config)
-
-puts '...started PostgreSQL Benchmark...'
 
 # Create a new table
 conn.exec("DROP TABLE IF EXISTS #{table_name}")
